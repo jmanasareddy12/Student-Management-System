@@ -12,7 +12,7 @@ def add_student(request):
     if form.is_valid():
         form.save()
         return redirect('student_list')
-    return render(request,'students/student_forms.html',{'form':form})
+    return render(request,'students/student_form.html',{'form':form})
 
 def update_student(request,id):
     student=get_object_or_404(Students,id=id)
@@ -20,7 +20,7 @@ def update_student(request,id):
     if form.is_valid():
         form.save()
         return redirect('student_list')
-    return render(request,'students/student_forms.html',{'form':form})
+    return render(request,'students/student_form.html',{'form':form})
 
 def delete_student(request,id):
     student=get_object_or_404(Students,id=id)
