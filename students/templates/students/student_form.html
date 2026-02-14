@@ -1,1 +1,23 @@
-<center><h1>Student Form</h1></center>
+{% load static %}
+<link rel="stylesheet" href="{%static 'student/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+</head>
+<body>
+    <center><h1 style="background-color: teal;">STUDENT FORM</h1>
+        <hr>
+    <form method="POST">
+  {% csrf_token %}      
+        {{ form.as_p }}
+        <button type="submit" style="background-color: teal;">SAVE</button>
+    </form><hr> 
+    <a href="{% url 'student_list' %}">BACK TO HOME PAGE</a>
+   
+</center>
+</body>
+</html>
